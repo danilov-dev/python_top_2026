@@ -4,20 +4,6 @@ from typing import Optional
 from bs4 import BeautifulSoup
 import requests
 
-class Quote:
-    def __init__(self, text: str, author: Author, tags: list):
-        self.text = text
-        self.author = author
-        self.tags = tags
-
-    def to_dict(self):
-        return {
-            'text': self.text,
-            'author': self.author.to_dict() if self.author else None,
-            'tags': [tags.to_dict() for tags in self.tags]
-        }
-
-
 class Author:
     def __init__(self, name: str, url: str):
         self.name = name
@@ -31,6 +17,19 @@ class Tag:
         self.url = url
     def to_dict(self):
         return {'name': self.name, 'url': self.url}
+
+class Quote:
+    def __init__(self, text: str, author: Author, tags: list):
+        self.text = text
+        self.author = author
+        self.tags = tags
+
+    def to_dict(self):
+        return {
+            'text': self.text,
+            'author': self.author.to_dict() if self.author else None,
+            'tags': [tags.to_dict() for tags in self.tags]
+        }
 
 class QuoteScraper:
     def __init__(self, base_url: str):
