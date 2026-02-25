@@ -1,3 +1,5 @@
+import string
+import random
 from typing import Optional
 
 import requests
@@ -40,3 +42,10 @@ if __name__ == "__main__":
 # Скачать не менее 20 фото
 # Названия фото по породе собаки
 # Каждая порода в отдельной директории
+
+def generate_random_string(length: int) -> str:
+    alphabet = string.ascii_letters + string.digits + string.punctuation
+
+    return ''.join(random.choice(alphabet) for i in range(length))
+
+print(generate_random_string(10))
