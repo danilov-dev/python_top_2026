@@ -59,7 +59,7 @@ class Parser:
                         'felling': cells[2].text.strip(),
                         'probability': cells[3].text.strip(),
                         'pressure': cells[4].text.strip(),
-                        'wind': cells[5].text.strip(),
+                        'wind': cells[5].text.strip()   ,
                         'humidity': cells[6].text.strip(),
                     }
 
