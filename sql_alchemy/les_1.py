@@ -43,11 +43,6 @@ class ProductRepository:
             product.price = new_product.price
             product.is_available = new_product.is_available
             self.session.execute(product)
-
-
-
-
-
 with session() as s:
     pass
 
